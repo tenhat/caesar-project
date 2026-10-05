@@ -42,7 +42,7 @@ public class CaesarBreak {
     public static void main(String[] args) throws IOException {
         int C = mostFrequentLetter(Files.readString(Path.of("big.txt")));
         String plaintext = Files.readString(Path.of("plaintext.txt"));
-        String ciphertext = caesarEncoder(16, plaintext);
+        String ciphertext = caesarEncoder(C, plaintext);
         int D = mostFrequentLetter(ciphertext);
         int diff = Math.floorMod(D - C, 26);
         String decoded = caesarDecoder(diff, ciphertext);
